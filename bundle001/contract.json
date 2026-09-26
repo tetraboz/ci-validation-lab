@@ -1,0 +1,33 @@
+{
+  "id": "PUBLIC_VALIDATION_BUNDLE_001",
+  "version": 1,
+  "scope": "generic_trust_and_integrity_regressions",
+  "authority": "SUPPORTING_ONLY",
+  "synthetic_protected_path_count": 55,
+  "fixed_identity_probe": {
+    "path": "synthetic/protected/000.txt",
+    "content": "fixture-000\n",
+    "git_blob_sha1": "548d4a9ac4d1cff9c490fb79630b3430d9132a7b"
+  },
+  "candidate_execution_policy": "DO_NOT_EXECUTE_CANDIDATE_CODE",
+  "private_inputs_forbidden": true,
+  "regression_classes": [
+    "protected_content_mutation",
+    "protected_same_size_mutation",
+    "protected_deletion",
+    "protected_symlink_substitution",
+    "workflow_addition",
+    "workflow_mutation",
+    "workflow_deletion",
+    "unchecked_bytecode_addition",
+    "pycache_addition",
+    "pip_shadow_module",
+    "pip_package_shadow",
+    "sitecustomize_shadow",
+    "usercustomize_shadow",
+    "protected_mode_change",
+    "protected_path_type_change",
+    "optimized_bytecode_addition",
+    "pip_namespace_shadow"
+  ]
+}
