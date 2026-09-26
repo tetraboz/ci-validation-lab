@@ -1,0 +1,30 @@
+name: Public Bundle 003 - Schema Format
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "bundle003/**"
+      - ".github/workflows/bundle003-schema-format.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-schema-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Install pinned parser
+        run: python -I -m pip --isolated install --disable-pip-version-check "PyYAML==6.0.3"
+      - name: Run Bundle 003
+        run: python -I -B --check-hash-based-pycs always bundle003/test_bundle.py
