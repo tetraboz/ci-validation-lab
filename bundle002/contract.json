@@ -1,0 +1,42 @@
+{
+  "id": "PUBLIC_VALIDATION_BUNDLE_002",
+  "version": 1,
+  "scope": "generic_deterministic_route_dependency_closure",
+  "authority": "SUPPORTING_ONLY",
+  "synthetic_node_count": 7,
+  "fixed_identity_probe": {
+    "path": "synthetic/nodes/a.txt",
+    "content": "node-a\n",
+    "git_blob_sha1": "babfbfb4a3848bfea5e307d58939c7316ea6b035"
+  },
+  "regression_classes": [
+    "wrong_schema_version",
+    "wrong_status",
+    "empty_entrypoints",
+    "duplicate_entrypoint",
+    "unknown_entrypoint",
+    "unknown_dependency",
+    "dependency_cycle",
+    "duplicate_dependency",
+    "missing_declared_closure_member",
+    "extra_declared_closure_member",
+    "declared_closure_order_drift",
+    "duplicate_declared_closure_member",
+    "missing_content_binding",
+    "extra_content_binding",
+    "same_size_content_mutation",
+    "noncanonical_path_dot",
+    "parent_escape_path",
+    "absolute_path",
+    "symlink_path_component",
+    "duplicate_node_path",
+    "invalid_soft_budget_zero"
+  ],
+  "positive_invariants": [
+    "deterministic_dependency_first_closure",
+    "exact_content_binding",
+    "soft_budget_overage_never_drops_required_closure",
+    "independent_verifier_agrees"
+  ],
+  "private_inputs_forbidden": true
+}
