@@ -1,0 +1,25 @@
+name: Public Bundle 001 - Trust Integrity
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "bundle001/**"
+      - ".github/workflows/bundle001-trust-integrity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-trust-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - name: Run Bundle 001
+        run: python3 -I -B --check-hash-based-pycs always bundle001/test_bundle.py
