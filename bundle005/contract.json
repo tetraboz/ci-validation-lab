@@ -1,0 +1,53 @@
+{
+  "id": "PUBLIC_VALIDATION_BUNDLE_005",
+  "version": 1,
+  "scope": "generic_exact_representation_equivalence_fixture_harness",
+  "authority": "SUPPORTING_ONLY",
+  "synthetic_fixture": {
+    "component_family": "SYNTHETIC_PROFILE",
+    "source_version": 1,
+    "target_version": 2
+  },
+  "regression_classes": [
+    "scalar_value_mismatch",
+    "integer_boolean_type_mismatch",
+    "integer_float_type_mismatch",
+    "ordered_list_reordering",
+    "ordered_list_member_removed",
+    "mapping_member_removed",
+    "mapping_member_added",
+    "mapping_key_type_mismatch",
+    "source_selector_unresolved",
+    "target_selector_unresolved",
+    "item_selector_missing",
+    "ordered_subsequence_member_missing",
+    "ordered_subsequence_reordered",
+    "exclusion_source_not_mapping",
+    "exclusion_path_missing",
+    "certificate_source_file_mismatch",
+    "certificate_target_file_mismatch",
+    "certificate_family_missing",
+    "certificate_source_version_missing",
+    "certificate_target_version_missing",
+    "certificate_subject_path_mismatch",
+    "certificate_machine_check_missing",
+    "coverage_uncovered_not_retained",
+    "coverage_unresolved_not_retained",
+    "coverage_unknown_delta_member",
+    "coverage_duplicate_delta_member",
+    "coverage_certified_member_left_in_delta",
+    "whole_equivalence_claim_with_unresolved_member"
+  ],
+  "positive_invariants": [
+    "type_exact_structural_identity",
+    "mapping_key_order_is_not_semantic",
+    "ordered_lists_preserve_order",
+    "declared_exclusion_is_explicit",
+    "declared_ordered_subsequence_is_explicit",
+    "source_and_target_are_bound_to_registered_family_versions",
+    "semantic_subject_paths_match_exactly",
+    "uncertified_members_remain_explicit_delta",
+    "unresolved_never_promotes_to_exact"
+  ],
+  "private_inputs_forbidden": true
+}
