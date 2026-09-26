@@ -1,0 +1,95 @@
+{
+  "id": "PUBLIC_VALIDATION_SUITE",
+  "version": 1,
+  "authority": "SUPPORTING_ONLY",
+  "bundle_order": [
+    "PUBLIC_VALIDATION_BUNDLE_001",
+    "PUBLIC_VALIDATION_BUNDLE_002",
+    "PUBLIC_VALIDATION_BUNDLE_003",
+    "PUBLIC_VALIDATION_BUNDLE_004",
+    "PUBLIC_VALIDATION_BUNDLE_005"
+  ],
+  "bundles": [
+    {
+      "id": "PUBLIC_VALIDATION_BUNDLE_001",
+      "status": "ADOPTED_PUBLIC_SUPPORTING",
+      "authority": "SUPPORTING_ONLY",
+      "contract": "bundle001/contract.json",
+      "workflow": ".github/workflows/bundle001-trust-integrity.yml",
+      "workflow_push_paths": ["bundle001/**", ".github/workflows/bundle001-trust-integrity.yml"],
+      "test_command": "python3 -I -B --check-hash-based-pycs always bundle001/test_bundle.py",
+      "artifacts": {
+        "bundle001/contract.json": "0539c976365df09a4ad271e850a2b59ad336a3cb",
+        "bundle001/trust_integrity_guard.py": "d29e118df876452eb376a079f68d530d477bcaea",
+        "bundle001/test_bundle.py": "2edc472a56e865e19dce5ffa32ab05020e78845a",
+        ".github/workflows/bundle001-trust-integrity.yml": "2017bfb2059cfe240f5540d6607262eaf9344879",
+        "README.md": "1ceaa4781889b5c990703212f81f4372dd9107ba"
+      }
+    },
+    {
+      "id": "PUBLIC_VALIDATION_BUNDLE_002",
+      "status": "ADOPTED_PUBLIC_SUPPORTING",
+      "authority": "SUPPORTING_ONLY",
+      "contract": "bundle002/contract.json",
+      "workflow": ".github/workflows/bundle002-route-closure.yml",
+      "workflow_push_paths": ["bundle002/**", ".github/workflows/bundle002-route-closure.yml"],
+      "test_command": "python3 -I -B --check-hash-based-pycs always bundle002/test_bundle.py",
+      "artifacts": {
+        "bundle002/contract.json": "37b2fc98a5354d5978a7e7bd4345830d991aeda7",
+        "bundle002/route_closure.py": "e0c9782587c25493d76600dad2a83f96b6ae5327",
+        "bundle002/independent_verifier.py": "47981a3f233edae26b69324cb638d1f55ebe8ff9",
+        "bundle002/test_bundle.py": "37a15e2c97b8f482551ace836b322aff08c5ba60",
+        ".github/workflows/bundle002-route-closure.yml": "7edf6b70a9bd19873528d0df483284bf15996703",
+        "bundle002/README.md": "382593966f38af219c04226cf005ba3ce035297c"
+      }
+    },
+    {
+      "id": "PUBLIC_VALIDATION_BUNDLE_003",
+      "status": "ADOPTED_PUBLIC_SUPPORTING",
+      "authority": "SUPPORTING_ONLY",
+      "contract": "bundle003/contract.json",
+      "workflow": ".github/workflows/bundle003-schema-format.yml",
+      "workflow_push_paths": ["bundle003/**", ".github/workflows/bundle003-schema-format.yml"],
+      "test_command": "python -I -B --check-hash-based-pycs always bundle003/test_bundle.py",
+      "artifacts": {
+        "bundle003/contract.json": "7a48428643086aa24b6ca272b0cfc48894177528",
+        "bundle003/strict_schema.py": "1bc361290fe3304aedb8d508a95d29a2e2e069e0",
+        "bundle003/test_bundle.py": "dc287e7273095a62b5390ea1a5b236c77a50e6e1",
+        ".github/workflows/bundle003-schema-format.yml": "530bcae5674b80d852a417eb4df865ff619aa6e6",
+        "bundle003/README.md": "d7d76aa8c87e280e301e783ee30522dbddfa6efb"
+      }
+    },
+    {
+      "id": "PUBLIC_VALIDATION_BUNDLE_004",
+      "status": "ADOPTED_PUBLIC_SUPPORTING",
+      "authority": "SUPPORTING_ONLY",
+      "contract": "bundle004/contract.json",
+      "workflow": ".github/workflows/bundle004-workflow-contract.yml",
+      "workflow_push_paths": ["bundle004/**", ".github/workflows/bundle004-workflow-contract.yml"],
+      "test_command": "python -I -B --check-hash-based-pycs always bundle004/test_bundle.py",
+      "artifacts": {
+        "bundle004/contract.json": "5d800dd32e90579280c3c1dcc4bf1f89bf692211",
+        "bundle004/workflow_contract.py": "9da8159204ab8e3c6973521275527c2f219e875d",
+        "bundle004/test_bundle.py": "c2015cf0a22167aa0e3505d4c26d9ac6594fa089",
+        ".github/workflows/bundle004-workflow-contract.yml": "7673dda49e655e22f83b94b0e5250bdf550c4960",
+        "bundle004/README.md": "00eb271e2cf6baf29513ef5cfe192d185050afa2"
+      }
+    },
+    {
+      "id": "PUBLIC_VALIDATION_BUNDLE_005",
+      "status": "ADOPTED_PUBLIC_SUPPORTING",
+      "authority": "SUPPORTING_ONLY",
+      "contract": "bundle005/contract.json",
+      "workflow": ".github/workflows/bundle005-equivalence-fixtures.yml",
+      "workflow_push_paths": ["bundle005/**", ".github/workflows/bundle005-equivalence-fixtures.yml"],
+      "test_command": "python -I -B --check-hash-based-pycs always bundle005/test_bundle.py",
+      "artifacts": {
+        "bundle005/contract.json": "a278759badc8d39677d286d8d36d052dbe40eb5d",
+        "bundle005/equivalence_harness.py": "28b12cdf2739d82b644722b1d7961e3dc31b51ed",
+        "bundle005/test_bundle.py": "194202ae2faad761da31b3ee882bb5a3f3840fc5",
+        ".github/workflows/bundle005-equivalence-fixtures.yml": "6eb744253350abd3c1960371cc3939a838f8fded",
+        "bundle005/README.md": "a5741069e08fca97505262d5f5d1170b0f808927"
+      }
+    }
+  ]
+}
