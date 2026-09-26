@@ -1,0 +1,30 @@
+name: Public Bundle 004 - Workflow Contract
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "bundle004/**"
+      - ".github/workflows/bundle004-workflow-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-workflow-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Install pinned parser
+        run: python -I -m pip --isolated install --disable-pip-version-check "PyYAML==6.0.3"
+      - name: Run Bundle 004
+        run: python -I -B --check-hash-based-pycs always bundle004/test_bundle.py
