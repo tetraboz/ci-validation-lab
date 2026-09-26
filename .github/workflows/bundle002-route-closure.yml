@@ -1,0 +1,25 @@
+name: Public Bundle 002 - Route Closure
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "bundle002/**"
+      - ".github/workflows/bundle002-route-closure.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-route-closure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - name: Run Bundle 002
+        run: python3 -I -B --check-hash-based-pycs always bundle002/test_bundle.py
