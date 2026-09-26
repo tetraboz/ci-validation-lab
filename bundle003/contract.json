@@ -1,0 +1,39 @@
+{
+  "id": "PUBLIC_VALIDATION_BUNDLE_003",
+  "version": 1,
+  "scope": "generic_schema_format_and_duplicate_key_validation",
+  "authority": "SUPPORTING_ONLY",
+  "dependency": {
+    "PyYAML": "6.0.3"
+  },
+  "regression_classes": [
+    "yaml_duplicate_top_level",
+    "yaml_duplicate_nested",
+    "yaml_malformed",
+    "json_duplicate_top_level",
+    "json_duplicate_nested",
+    "json_malformed",
+    "document_not_mapping",
+    "missing_required_field",
+    "unknown_field",
+    "schema_version_string_not_integer",
+    "schema_version_bool_not_integer",
+    "enum_mismatch",
+    "empty_nonempty_string",
+    "list_item_type_mismatch",
+    "selector_missing_leaf",
+    "selector_non_mapping_intermediate",
+    "python_syntax_error",
+    "python_null_byte_rejected"
+  ],
+  "positive_invariants": [
+    "duplicate_keys_fail_closed",
+    "schema_types_are_exact",
+    "bool_is_not_accepted_as_integer",
+    "unknown_fields_can_fail_closed",
+    "selectors_resolve_exactly",
+    "python_source_must_compile",
+    "strict_isolated_no_bytecode_execution"
+  ],
+  "private_inputs_forbidden": true
+}
