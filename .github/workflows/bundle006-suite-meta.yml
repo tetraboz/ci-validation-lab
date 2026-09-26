@@ -1,0 +1,41 @@
+name: Public Bundle 006 - Suite Meta Validation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "bundle001/**"
+      - "bundle002/**"
+      - "bundle003/**"
+      - "bundle004/**"
+      - "bundle005/**"
+      - "bundle006/**"
+      - "README.md"
+      - ".github/workflows/bundle001-trust-integrity.yml"
+      - ".github/workflows/bundle002-route-closure.yml"
+      - ".github/workflows/bundle003-schema-format.yml"
+      - ".github/workflows/bundle004-workflow-contract.yml"
+      - ".github/workflows/bundle005-equivalence-fixtures.yml"
+      - ".github/workflows/bundle006-suite-meta.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-suite-meta-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Install pinned parser
+        run: python -I -m pip --isolated install --disable-pip-version-check "PyYAML==6.0.3"
+      - name: Run Bundle 006
+        run: python -I -B --check-hash-based-pycs always bundle006/test_bundle.py
